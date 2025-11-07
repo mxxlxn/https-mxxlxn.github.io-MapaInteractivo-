@@ -1,0 +1,350 @@
+index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa Interactivo</title>
+
+<section id="introduccion">
+  <div class="intro-wrapper">
+    <div class="intro-text">
+      <h2 class="intro-title">¿Quiénes somos?</h2>
+      <p>
+       Somos Puentes de Democracia, donde nos une a todos a conscientizar y visibilizar nuestras voces frente a los problemas en común que estamos teniendo como ciudadanos, especialmente frente el gobierno de Javier Milei sobre los recortes de la educación y salud pública. Nos une la convicción de que la democracia no es solo lo que decide “la élite política”, sino también lo que vive, siente y defiende la sociedad en su diversidad.
+
+      </p>
+
+      <h2 class="intro-subtitle">Objetivo</h2>
+<p>
+  Nuestro objetivo es activar la participación y la expresión colectiva: que cada persona se sienta parte de ese aire que mantiene viva la democracia.
+  A través de este espacio buscamos compartir, debatir y aclarar la realidad que vivimos; sumarte, animarte y recordarte que tu voz también es democracia, esperanza y transformación.
+</p>
+    </div>
+
+    <div class="intro-image">
+      <img src="logo bandera.png" alt="A la educación y salud pública">
+    </div>
+  </div>
+</section>
+
+  <style>
+    body {
+      font-family: Albert Sans, sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #000000;
+    }
+
+    h1 {
+      margin-top: 20px;
+      color: #333;
+    }
+
+/* 🔹 Barra superior fija */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #46729C;
+  display: flex;
+  justify-content: flex-start; /* ahora todo se alinea a la izquierda */
+  align-items: center;
+  padding: 18px 50px; /* espacio lateral */
+  z-index: 1000;
+  gap: 80px; /* espacio entre el logo y el menú */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+header h1 {
+  font-size: 22px;
+  color: #ffffff;
+  margin: 0;
+  white-space: nowrap;
+}
+nav {
+  display: flex;
+  justify-content: flex-start; /* menú también a la izquierda */
+  gap: 40px; /* separa los enlaces entre sí */
+}
+nav a {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  transition: opacity 0.2s ease;
+  white-space: nowrap;
+}
+nav a:hover {
+  opacity: 0.8;
+}
+
+/* 🔹 Ajuste del mapa para no ser tapado por la barra */
+iframe {
+  margin-top: 85px;
+  display: block;
+  width: 95vw;     /* mantiene margen lateral */
+  height: 82vh;    /* antes 90vh → ahora un poco más corto visualmente */
+  border: none;
+  margin-bottom: 20px; /* pequeño espacio inferior visual */
+}
+
+/* 🔹 Asegura que se pueda hacer scroll */
+html, body {
+  height: auto;
+  overflow-y: auto; /* habilita scroll vertical */
+}
+
+footer {
+  width: 100%;
+  background: #46729C;
+  border-top: 4px solid #46729C;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 15px 0 15px 120px; /* 🔹 margen izquierdo más amplio */
+  min-height: 90px;
+}
+
+footer img {
+  max-width: 220px;
+  height: auto;
+  display: block;
+}
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #46729C;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 50px; /* espacio lateral */
+  z-index: 1000;
+  gap: 60px; /* espacio entre logo y menú */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo-navbar {
+  height: 45px; /* ajustá este valor si querés que sea más grande o chico */
+  width: auto;
+  display: block;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&display=swap');
+
+#introduccion {
+  width: 100%;
+  background-color: #000;
+  color: #f5f5f5;
+  font-family: 'Albert Sans', sans-serif;
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  padding: 60px 0;
+}
+
+.intro-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 50px;
+  box-shadow: 0 0 0px rgba(255, 255, 255, 0.1);
+}
+
+.intro-text {
+  width: 60%;
+  text-align: justify;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.intro-image {
+  width: 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.intro-image img {
+  width: 100%;
+  max-width: 450px; /* 🔹 aumentamos el tamaño máximo */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 0px rgba(255,255,255,0.2);
+}
+
+
+/* Animaciones de entrada */
+@keyframes fadeInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Aplica animación a los elementos */
+.intro-text {
+  animation: fadeInLeft 1.3s ease forwards;
+}
+
+.intro-image {
+  animation: fadeInRight 1.3s ease forwards;
+}
+.intro-image {
+  animation: fadeInRight 1.3s ease forwards;
+  animation-delay: 0.3s;
+}
+
+.rojo {
+  color: #ff3b3b; /* rojo fuerte pero legible sobre negro */
+  font-weight: 600;
+}
+
+.intro-title {
+  font-family: 'Albert Sans', sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-align: left;
+  margin-bottom: 25px;
+  margin-top: 0;
+}
+
+.intro-subtitle {
+  font-family: 'Albert Sans', sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin-top: 40px;
+  margin-bottom: 15px;
+  text-align: left;
+  padding-left: 10px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===== Responsive solo para móvil ===== */
+@media (max-width: 768px) {
+
+  /* Header / navbar básico */
+  header {
+    padding: 10px 16px;
+  }
+  .logo-navbar {
+    max-height: 36px;
+  }
+  nav a {
+    margin: 0 8px;
+    font-size: 0.95rem;
+  }
+
+  /* Bloque de introducción */
+  #introduccion {
+    margin-top: 40px;         /* un poco menos de aire en mobile */
+    padding: 30px 0 24px;
+  }
+
+  .intro-wrapper {
+    width: 92%;
+    padding: 20px;            /* cuadro más compacto */
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;   /* texto arriba, imágenes abajo */
+    gap: 18px;
+    align-items: stretch;     /* alinea con los bordes del cuadro */
+  }
+
+  .intro-title,
+  .intro-subtitle {
+    font-size: 1.5rem;        /* títulos equilibrados en mobile */
+    margin-bottom: 16px;
+  }
+
+  .intro-text {
+    width: 100%;
+    font-size: 1rem;
+    line-height: 1.7;
+    text-align: left;
+  }
+
+  .intro-image {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;                /* espacio entre bandera y “respirar” */
+    align-items: center;      /* centra imágenes dentro del cuadro */
+    justify-content: flex-start;
+  }
+
+  /* Bandera más protagonista pero sin romper */
+  .bandera-img {
+    width: 100%;
+    max-width: 360px;         /* ajustá si querés más/menos grande */
+    height: auto;
+    margin: 0 auto;
+  }
+
+  /* “Respirar” más chica y alineada al final del texto */
+  .respirar-img {
+    width: 100%;
+    max-width: 220px;         /* más pequeña en mobile */
+    height: auto;
+    margin: 6px auto 0;
+  }
+
+  /* Mapa / iframe si está en la misma página */
+  #mapa iframe,
+  iframe {
+    width: 92vw !important;
+    height: 60vh !important;  /* alto cómodo en móvil */
+  }
+}
+
+  </style>
+</head>
+<body>
+<header>
+<img src="logopuentesdedemocracia.png" alt="Puentes de Democracia" class="logo-navbar">
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Video</a>
+    <a href="#Mapa">Mapa</a>
+    <a href="sumate.html">Sumate</a>
+  </nav>
+</header>
+  <section id="Mapa"> 
+  <iframe src="https://www.google.com/maps/d/embed?mid=1kJfEeSjdfBaAsNpUKZom-1Vmk1LuQvQ&ehbc=2E312F"></iframe>
+  </section>
+
+  <footer>
+  <img src="logopuentesdedemocracia.png" alt="Puentes de Democracia">
+</footer>
+
+</body>
+</html>
