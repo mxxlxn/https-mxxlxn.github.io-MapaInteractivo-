@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sumate | Puentes de Democracia</title>
+  <link rel="icon" href="logopuentesdedemocracia.png">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #46729C; /* fondo negro */
+      display: flex;
+      flex-direction: column;
+      justify-content: center;  /* centra verticalmente */
+      align-items: center;      /* centra horizontalmente */
+      min-height: 100vh;
+      font-family: 'Albert Sans', sans-serif;
+    }
+
+    .contenido {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 40px; /* espacio entre imagen y barra */
+    }
+
+    img {
+      max-width: 80vw;
+      height: auto;
+      display: block;
+    }
+
+    .barra-contacto {
+      width: 90%;
+      max-width: 1000px;
+      background-color: #ff3b3b;
+      color: #fff;
+      text-align: center;
+      font-size: 2rem;
+      padding: 30px 0;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 59, 59, 0.4);
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 768px) {
+      img {
+        max-width: 90vw;
+      }
+
+      .barra-contacto {
+        font-size: 1.5rem;
+        padding: 20px 0;
+        width: 95%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="contenido">
+    <img src="frase.png" alt="Frase - Puentes de Democracia">
+    <div class="barra-contacto">Dejá tu número de contacto</div>
+  </div>
+</body>
+</html>
